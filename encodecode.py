@@ -7,8 +7,8 @@ print("anything number. dec")
 encordec = int(input("1 or anything int: "))
 if encordec==1:
     print("ENC selected. What's your pin.")
-    pin = getpass.getpass("Your Pin: ")
-    pinag = getpass.getpass("Your Pin Again: ")
+    pin = int(getpass.getpass("Your Pin: "))
+    pinag = int(getpass.getpass("Your Pin Again: "))
 
     if not pin==pinag:
         print("pin, pinagain isn't same.")
