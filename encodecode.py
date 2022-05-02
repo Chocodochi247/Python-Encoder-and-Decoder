@@ -23,7 +23,7 @@ if encordec==1:
     for i in range(len(enctext)) :
         c = enctext[i]
         ac = ord(c)
-        ac += pswd + (pswd + pswd ** i) % 1114112
+        ac += pin + (pin + pin ** i) % 1114112
         c = chr(ac)
         encrypted += c
     print("result: " + str(encrypted))
@@ -31,10 +31,10 @@ if encordec==1:
     exit()
 else:
     print("You Selected Decode.")
-    pswd = int(getpass.getpass('The pin You wrote back then: '))
-    pswdagain = int(getpass.getpass('The pin You wrote back then Again: '))
+    pin = int(getpass.getpass('The pin You wrote back then: '))
+    pinagain = int(getpass.getpass('The pin You wrote back then Again: '))
 
-    if not pswd==pswdagain:
+    if not pin==pinagain:
         print("pin, pinagain isn't same.")
         input()
         exit()
@@ -45,7 +45,7 @@ else:
     for i in range(len(dtext)) :
         c = dtext[i]
         ac = ord(c)
-        ac -= pswd + (pswd + pswd ** i) % 1114112
+        ac -= pin + (pin + pin ** i) % 1114112
         c = chr(ac)
         decrypted += c
     print("result: " + str(decrypted))
